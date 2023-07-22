@@ -16,7 +16,7 @@ function StatisticsArea(props) {
             data={data.profit}
             color={theme.palette.secondary.light}
             height="70px"
-            title="Profit"
+            title="Number of Cases"
           />
         </Grid>
         <Grid item xs={12} md={6}>
@@ -24,9 +24,25 @@ function StatisticsArea(props) {
             data={data.views}
             color={theme.palette.primary.light}
             height="70px"
-            title="Views"
-          />
+            title="Number of Leads"
+          />     
         </Grid>
+        <Grid item xs={12} md={6}>
+          <CardChart
+            data={data.views}
+            color={theme.palette.primary.light}
+            height="70px"
+            title="Lead Conversion Rate"
+          />     
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <CardChart
+            data={data.views}
+            color={theme.palette.primary.light}
+            height="70px"
+            title="Case Completion Time by Employee"
+          />     
+        </Grid>                
       </Grid>
     )
   );
