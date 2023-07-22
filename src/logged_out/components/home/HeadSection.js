@@ -115,8 +115,7 @@ function HeadSection(props) {
                     >
                       <Box mb={4}>
                         <Typography variant={isWidthUpLg ? "h3" : "h4"}>
-                          Free Template for building a SaaS app using
-                          Material-UI
+                          Case Management Platform
                         </Typography>
                       </Box>
                       <div>
@@ -125,11 +124,10 @@ function HeadSection(props) {
                             variant={isWidthUpLg ? "h6" : "body1"}
                             color="textSecondary"
                           >
-                            Lorem ipsum dolor sit amet, consetetur sadipscing
-                            elitr, sed diam nonumy eirmod tempor invidunt
+                            Manage and update removal cases easily within our platform!
                           </Typography>
                         </Box>
-                        <Button
+                        {/* <Button
                           variant="contained"
                           color="secondary"
                           fullWidth
@@ -138,7 +136,7 @@ function HeadSection(props) {
                           href="https://github.com/dunky11/react-saas-template"
                         >
                           Download from GitHub
-                        </Button>
+                        </Button> */}
                       </div>
                     </Box>
                   </Grid>
