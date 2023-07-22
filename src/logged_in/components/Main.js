@@ -114,36 +114,36 @@ function Main(props) {
     const transactions = [];
     const iterations = 32;
     const oneMonthSeconds = Math.round(60 * 60 * 24 * 30.5);
-    const transactionTemplates = [
+    const caseTemplates = [
       {
-        description: "Starter subscription",
+        clientName: "Starter subscription",
         isSubscription: true,
-        balanceChange: -1499,
+        caseStatus: "Completed",
       },
       {
-        description: "Premium subscription",
+        clientName: "Premium subscription",
         isSubscription: true,
-        balanceChange: -2999,
+        caseStatus: "Completed",
       },
       {
-        description: "Business subscription",
+        clientName: "Business subscription",
         isSubscription: true,
-        balanceChange: -4999,
+        caseStatus: "Stage 1",
       },
       {
-        description: "Tycoon subscription",
+        clientName: "Tycoon subscription",
         isSubscription: true,
-        balanceChange: -9999,
+        caseStatus: "Stage 2",
       },
       {
-        description: "Added funds",
+        clientName: "Added funds",
         isSubscription: false,
-        balanceChange: 2000,
+        caseStatus: "Stage 3",
       },
       {
-        description: "Added funds",
+        clientName: "Added funds",
         isSubscription: false,
-        balanceChange: 5000,
+        caseStatus: "Stage 4",
       },
     ];
     let curUnix = Math.round(
@@ -151,13 +151,13 @@ function Main(props) {
     );
     for (let i = 0; i < iterations; i += 1) {
       const randomTransactionTemplate =
-        transactionTemplates[
-          Math.floor(Math.random() * transactionTemplates.length)
+        caseTemplates[
+          Math.floor(Math.random() * caseTemplates.length)
         ];
       const transaction = {
         id: i,
-        description: randomTransactionTemplate.description,
-        balanceChange: randomTransactionTemplate.balanceChange,
+        clientName: randomTransactionTemplate.clientName,
+        caseStatus: randomTransactionTemplate.caseStatus,
         paidUntil: curUnix + oneMonthSeconds,
         timestamp: curUnix,
       };

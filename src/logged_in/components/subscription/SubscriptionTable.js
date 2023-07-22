@@ -36,24 +36,24 @@ const styles = theme => ({
 
 const rows = [
   {
-    id: "description",
+    id: "clientName",
     numeric: false,
-    label: "Action"
+    label: "Client Name"
   },
-  {
-    id: "balanceChange",
-    numeric: false,
-    label: "Balance change"
-  },
+  // {
+  //   id: "clientId",
+  //   numeric: false,
+  //   label: "Client ID"
+  // },
   {
     id: "date",
     numeric: false,
-    label: "Date"
+    label: "Last modified"
   },
   {
-    id: "paidUntil",
+    id: "status",
     numeric: false,
-    label: "Paid until"
+    label: "Status"
   }
 ];
 
@@ -85,31 +85,29 @@ function SubscriptionTable(props) {
                     scope="row"
                     className={classes.firstData}
                   >
-                    {transaction.description}
-                  </TableCell>
-                  <TableCell component="th" scope="row">
-                    {transaction.balanceChange > 0 ? (
-                      <ColorfulChip
-                        label={`+${currencyPrettyPrint(
-                          transaction.balanceChange
-                        )}`}
-                        color={theme.palette.secondary.main}
-                      />
-                    ) : (
-                      <ColorfulChip
-                        label={currencyPrettyPrint(transaction.balanceChange)}
-                        color={theme.palette.error.dark}
-                      />
-                    )}
+                    {transaction.clientName}
                   </TableCell>
                   <TableCell component="th" scope="row">
                     {unixToDateString(transaction.timestamp)}
                   </TableCell>
                   <TableCell component="th" scope="row">
+                    {transaction.caseStatus === "Completed" ? (
+                      <ColorfulChip
+                        label={transaction.caseStatus}
+                        color={theme.palette.secondary.main}
+                      />
+                    ) : (
+                      <ColorfulChip
+                        label={transaction.caseStatus}
+                        color={theme.palette.error.dark}
+                      />
+                    )}
+                  </TableCell>                  
+                  {/* <TableCell component="th" scope="row">
                     {transaction.paidUntil
                       ? unixToDateString(transaction.paidUntil)
                       : ""}
-                  </TableCell>
+                  </TableCell> */}
                 </TableRow>
               ))}
           </TableBody>
